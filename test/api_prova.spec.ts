@@ -177,6 +177,7 @@ describe('Teste de Erro - Atualizar objeto que não existe', () => {
     await p
       .spec()
       .patch(`${baseUrl}/objects/00000000`)
+      .withJson({ name: 'Nome Inexistente' })
       .expectStatus(StatusCodes.NOT_FOUND)
   });
 });
